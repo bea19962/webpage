@@ -1,8 +1,11 @@
+import ufocat from '../assets/ufocat.png';
+import laptop from '../assets/laptop.png';
+// import skills from '../assets/skills.png'; // Ensure you have an icon for skills
 
 const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#projects', label: 'Projects' },
-  { href: '#skills', label: 'Skills' },
+  { href: '#about', label: 'About', icon: ufocat },
+  { href: '#projects', label: 'Projects', icon: laptop },
+  // { href: '#skills', label: 'Skills', icon: skills },
 ];
 
 function Navigation() {
@@ -10,7 +13,7 @@ function Navigation() {
     <nav className="vertical-nav">
       {navItems.map((item, index) => (
         <a key={index} href={item.href} className="nav-item">
-          {item.label}
+          {item.icon && <img src={item.icon} alt={item.label} />}
         </a>
       ))}
     </nav>
