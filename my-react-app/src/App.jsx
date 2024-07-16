@@ -1,6 +1,6 @@
 
-import SplineComponent from './SplineComponent';
-import Navigation from './Navigation';
+import SplineComponent from './components/SplineComponent';
+import Navigation from './components/Navigation';
 
 function App() {
   return (
