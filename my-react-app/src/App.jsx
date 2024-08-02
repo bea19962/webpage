@@ -7,8 +7,8 @@ function App() {
     <div className="App">
       <Navigation />
       <main>
-        <section id="about" style={{ width: '100%', height: '100vh' }}>
-          <SplineComponent />
+        <section id="about" style={{ backgroundcolor:'pink', width: '100%', height: '100vh' }}>
+          {/* <SplineComponent /> */}
         </section>
         <section id="projects" style={{ width: '100%', height: '100vh' }}>
           <h2>Projects</h2>
