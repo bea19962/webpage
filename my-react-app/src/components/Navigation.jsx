@@ -1,4 +1,4 @@
-import ufocat from '../assets/ufocat.png';
+import ufocat from '../assets/ufocat.svg';
 import laptop from '../assets/laptop.png';
 // import skills from '../assets/skills.png'; // Ensure you have an icon for skills
 
