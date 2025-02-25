@@ -10,7 +10,7 @@ button {
   text-transform: uppercase;
   background: none;
   border: none;
-  cursor: pointer;
+  cursor: url("../assets/c_pointer.png"), auto;
 
   &.active {
     color: $hover-color;

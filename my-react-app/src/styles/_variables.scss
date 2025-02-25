@@ -87,3 +87,7 @@ $z-index-modal: 2000;              // Modal Z-index for popups, etc.
  src: local("Daydream"),
    url("../assets/fonts/Daydream.ttf") format("truetype");
 }
+
+//cursor
+
+$cursor-pointer:url("../assets/c_pointer.png"), auto;
