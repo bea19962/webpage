@@ -1,7 +1,7 @@
 import "../styles/_landingSection.scss";
 import SplineComponent from "./SplineComponent";
 import TypewriterText from "./TypewriterText";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const LandingSection = () => {
   return (
@@ -15,31 +15,28 @@ const LandingSection = () => {
         </h1>
         <h2 className="subheadline">
           <TypewriterText
-            text="> i am 3d artist and full-stack developer based in Germany."
+            text={`> i am 3d artist and full-stack developer based in Germany.`}
             delay={200}
           />
           <TypewriterText
-            text="> i love to experiment with art, tech and brain rot. "
-            delay={300}
-          />
-          <TypewriterText
-            text="> i make 3D, animation, Front end, backend and 3d printing"
-            delay={400}
+            text={`i love to experiment with art, tech and brain rot.`}
+            delay={600}
           />
         </h2>
       </div>
-        <motion.button
-          className="cta-button"
-          onClick={() => scrollToSection("projects")}
-          initial={{ opacity: 0, y: 50 }}  // Start hidden and below
-          animate={{ opacity: 1, y: 0 }}  // Fade in and move up
-          transition={{ 
-            duration: 0.6,                 // Animation duration
-            ease: "easeOut",               // Smooth transition
-            delay: 1.5                     // Delay in seconds
-          }} >
-          Explore My Work
-        </motion.button>
+      <motion.button
+        className="cta-button"
+        onClick={() => scrollToSection("projects")}
+        initial={{ opacity: 0, y: 50 }} // Start hidden and below
+        animate={{ opacity: 1, y: 0 }} // Fade in and move up
+        transition={{
+          duration: 0.6, // Animation duration
+          ease: "easeOut", // Smooth transition
+          delay: 1.5, // Delay in seconds
+        }}
+      >
+        Explore My Work
+      </motion.button>
     </section>
   );
 };
