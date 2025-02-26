@@ -31,12 +31,6 @@ const Navbar = ({ activeSection, onLinkClick }) => {
           onLinkClick={onLinkClick}
         />
         <NavLink
-          section="about"
-          label="about, "
-          activeSection={activeSection}
-          onLinkClick={onLinkClick}
-        />
-        <NavLink
           section="contact"
           label="Contact, "
           activeSection={activeSection}

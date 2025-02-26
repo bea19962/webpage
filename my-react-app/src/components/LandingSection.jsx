@@ -1,5 +1,7 @@
 import "../styles/_landingSection.scss";
 import SplineComponent from "./SplineComponent";
+import TypewriterText from "./TypewriterText";
+import { motion } from 'framer-motion';
 
 const LandingSection = () => {
   return (
@@ -8,14 +10,36 @@ const LandingSection = () => {
         <SplineComponent />
       </div>
       <div className="content">
-        <h1 className="headline"> &gt; ../Hello There, </h1>
-        {/* <p className="subheadline">
-          I am 3D artist and full-stack developer from Portugal living in Germany.
-        </p> */}
-        <button className="cta-button" onClick={() => scrollToSection("projects")}>
-          Explore My Work
-        </button>
+        <h1 className="headline">
+          <TypewriterText text="> ../ Hello There" delay={200} />
+        </h1>
+        <h2 className="subheadline">
+          <TypewriterText
+            text="> i am 3d artist and full-stack developer based in Germany."
+            delay={200}
+          />
+          <TypewriterText
+            text="> i love to experiment with art, tech and brain rot. "
+            delay={300}
+          />
+          <TypewriterText
+            text="> i make 3D, animation, Front end, backend and 3d printing"
+            delay={400}
+          />
+        </h2>
       </div>
+        <motion.button
+          className="cta-button"
+          onClick={() => scrollToSection("projects")}
+          initial={{ opacity: 0, y: 50 }}  // Start hidden and below
+          animate={{ opacity: 1, y: 0 }}  // Fade in and move up
+          transition={{ 
+            duration: 0.6,                 // Animation duration
+            ease: "easeOut",               // Smooth transition
+            delay: 1.5                     // Delay in seconds
+          }} >
+          Explore My Work
+        </motion.button>
     </section>
   );
 };

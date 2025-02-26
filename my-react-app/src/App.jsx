@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Navbar";
 import LoadingScreen from "./components/LoadingScreen";
-import SplineComponent from "./components/SplineComponent";
 import PortfolioSection from "./components/PortfolioSection";
 import LandingSection from "./components/LandingSection";
 import VideoBackground from "./components/VideoBackground";
@@ -58,17 +57,16 @@ function App() {
       <VideoBackground/>
       <Navbar activeSection={activeSection} onLinkClick={scrollToSection} />
         <section id="home" ref={sectionRefs.home}>
-          {/* <SplineComponent/>  */}
           <LandingSection/>
 
         </section>
-        {/* <section id="projects" ref={sectionRefs.projects}>
+        <section id="projects" ref={sectionRefs.projects}>
           <h2>Projects</h2>
           <PortfolioSection/>
         </section>
         <section id="contact" ref={sectionRefs.contact}>
           <h2>Contact</h2>
-        </section> */}
+        </section>
     </div>
   );
 }
