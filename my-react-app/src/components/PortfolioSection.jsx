@@ -1,29 +1,52 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 import projectsData from "../projects.json";
 import "../styles/_portfolioSection.scss";
 
-const shuffleArray = (array) => {
-  return array
-    .map((item) => ({ ...item, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map((item) => item);
-};
-
 const PortfolioSection = () => {
-  const [shuffledProjects, setShuffledProjects] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [positions, setPositions] = useState([]);
+
+  console.log("width:",window.innerWidth )
+  console.log("height:",window.innerHeight )
+
+  const calculatePositions = () => {
+    return projectsData.map(() => ({
+      top: Math.random() * window.innerHeight,
+      left: Math.random() * 1500,
+    }));
+  };
 
   useEffect(() => {
-    setShuffledProjects(shuffleArray(projectsData));
+    setProjects(projectsData);
+    setPositions(calculatePositions());
+
+    const handleResize = () => {
+      setPositions(calculatePositions());
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
     <section className="portfolio-section">
-      <div className="grid-container">
-        {shuffledProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      {projects.map((project, index) => (
+        <div
+          key={project.id}
+          style={{
+            position: "absolute",
+            top: `${positions[index]?.top}px`,
+            left: `${positions[index]?.left}px`,
+          }}
+        >
+          <ProjectCard project={project} size={project.size} />
+        </div>
+      ))}
     </section>
   );
 };
