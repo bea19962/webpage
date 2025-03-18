@@ -13,7 +13,7 @@ const PortfolioSection = () => {
   const calculatePositions = () => {
     return projectsData.map(() => ({
       top: Math.random() * window.innerHeight,
-      left: Math.random() * 1500,
+      left: Math.random() * 1100,
     }));
   };
 
@@ -27,7 +27,6 @@ const PortfolioSection = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Cleanup function to remove event listener
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -45,6 +44,7 @@ const PortfolioSection = () => {
           }}
         >
           <ProjectCard project={project} size={project.size} />
+
         </div>
       ))}
     </section>
